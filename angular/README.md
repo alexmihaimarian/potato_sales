@@ -1,3 +1,7 @@
+#Login fake credentials: 
+username: username <br/>
+password: password
+
 # Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
