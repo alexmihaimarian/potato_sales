@@ -1,10 +1,9 @@
 <main class="form-signin">
   <div class="p-fluid grid">
-    <div class="card">
+    <p-card header="Sign In" class="card">
       <div class="p-fluid grid">
         <div class="field col-12 md:col-4">
           <form [formGroup]="loginForm">
-            <h1 class="h3 mb-3 fw-normal">Sign In</h1>
             <div class="form-floating">
               <span class="p-float-label">
                 <input id="float-input" type="text" pInputText formControlName="username">
@@ -15,7 +14,7 @@
               </div>
             </div>
             <div class="form-floating">
-              <p-password formControlName="password" [toggleMask]="true"></p-password>
+              <p-password formControlName="password" placeholder="Password" [toggleMask]="true"></p-password>
               <div *ngIf="loginForm.invalid && passwordControl?.touched && passwordControl.errors">
                 <span *ngIf="passwordControl.errors['minlength']">Password must have at least 8 characters</span>
               </div>
@@ -24,6 +23,6 @@
           </form>
         </div>
       </div>
-    </div>
+    </p-card>
   </div>
 </main>

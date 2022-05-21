@@ -24,7 +24,7 @@ import { InputMaskModule } from 'primeng/inputmask';
     InputTextModule,
     AutoCompleteModule,
     InputMaskModule,
-    PasswordModule
+    PasswordModule,
   ]
 })
 export class LoginModule { }

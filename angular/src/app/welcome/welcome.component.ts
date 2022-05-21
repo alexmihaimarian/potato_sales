@@ -15,16 +15,19 @@ export class WelcomeComponent {
   ngOnInit() {
     this.items = [
       {
-        label:'Home',
-        icon:'pi pi-fw pi-home'
+        label: 'Home',
+        icon: 'pi pi-fw pi-home',
+        routerLink: '/'
       },
       {
-        label:'New product',
-        icon:'pi pi-fw pi-box'
+        label: 'New product',
+        icon: 'pi pi-fw pi-box',
+        routerLink: 'new-product'
       },
       {
         label:'Sales',
-        icon:'pi pi-fw pi-chart-line'
+        icon:'pi pi-fw pi-chart-line',
+        routerLink: 'sales'
       },
     ];
   }
