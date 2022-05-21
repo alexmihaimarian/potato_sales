@@ -1,9 +1,28 @@
-<router-outlet></router-outlet>
-<div class="footer-toolbar-wrapper">
-  <p-toolbar>
-    <div class="p-toolbar-group-center">
-      <p>Footer here</p>
-    </div>
-  </p-toolbar>
+<div *ngIf="isUserLoggedIn">
+  <div class="col-sm-12">
+    <p-menubar [model]="items">
+      <ng-template pTemplate="end">
+        <button pButton pRipple
+                icon="pi pi-power-off"
+                class="p-button-outlined p-button-secondary"
+                label="Log out"
+                (click)="logout()"
+        >
+        </button>
+      </ng-template>
+    </p-menubar>
+  </div>
+</div>
+<div class="row">
+  <router-outlet></router-outlet>
+</div>
+<div class="row">
+  <div class="footer-toolbar-wrapper">
+    <p-toolbar>
+      <div class="p-toolbar-group-center">
+        <p>Footer here</p>
+      </div>
+    </p-toolbar>
+  </div>
 </div>
 

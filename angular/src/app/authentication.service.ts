@@ -13,9 +13,8 @@ export class AuthenticationService {
   constructor() { }
 
   login(username: string, password: string): Observable<any> {
-    // Mock a successful call to an API server.
     if (username == this.fakeUsername && password == this.fakePassword) {
-      localStorage.setItem("token", "my-super-secret-token-from-server");
+      localStorage.setItem("token", "fake-token");
       return of(new HttpResponse({ status: 200 }));
     } else {
       return of(new HttpResponse({ status: 401 }));
@@ -27,9 +26,6 @@ export class AuthenticationService {
   }
 
   isUserLoggedIn(): boolean {
-    if (localStorage.getItem("token") != null) {
-      return true;
-    }
-    return false;
+    return localStorage.getItem("token") != null;
   }
 }
