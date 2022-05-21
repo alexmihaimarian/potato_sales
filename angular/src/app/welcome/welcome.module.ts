@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { WelcomeRoutingModule } from './welcome-routing.module';
 import { WelcomeComponent } from './welcome.component';
 
-import {DialogModule} from "primeng/dialog";
+import { MenubarModule } from 'primeng/menubar';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import {DialogModule} from "primeng/dialog";
   imports: [
     CommonModule,
     WelcomeRoutingModule,
-    DialogModule
+    MenubarModule,
+    CardModule,
+    ButtonModule
   ]
 })
 export class WelcomeModule { }

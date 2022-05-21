@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
+import {MenuItem} from "primeng/api";
 
 @Component({
   selector: 'app-welcome',
@@ -8,6 +9,25 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent {
+
+  items: MenuItem[];
+
+  ngOnInit() {
+    this.items = [
+      {
+        label:'Home',
+        icon:'pi pi-fw pi-home'
+      },
+      {
+        label:'New product',
+        icon:'pi pi-fw pi-box'
+      },
+      {
+        label:'Sales',
+        icon:'pi pi-fw pi-chart-line'
+      },
+    ];
+  }
 
   constructor(
     private authService: AuthenticationService,
