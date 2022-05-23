@@ -10,3 +10,24 @@ body {
 .justify-content-center {
   justify-content: center;
 }
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.mr-4 {
+  margin-right: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+.mx-4 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.errorMessage {
+  color: red;
+}

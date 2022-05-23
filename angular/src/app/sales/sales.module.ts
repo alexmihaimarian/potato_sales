@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SalesRoutingModule } from './sales-routing.module';
 import { SalesComponent } from './sales.component';
 
+import { TableModule } from "primeng/table";
+
 
 @NgModule({
   declarations: [
@@ -11,7 +13,8 @@ import { SalesComponent } from './sales.component';
   ],
   imports: [
     CommonModule,
-    SalesRoutingModule
+    SalesRoutingModule,
+    TableModule
   ]
 })
 export class SalesModule { }

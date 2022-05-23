@@ -1,1 +1,7 @@
-<p>new-product works!</p>
+<div>
+  <div class="p-fluid p-grid mx-4 mt-4">
+    <p-card header="Add new product" class="card">
+      <app-new-product-form [fields]="fields$ | async"></app-new-product-form>
+    </p-card>
+  </div>
+</div>

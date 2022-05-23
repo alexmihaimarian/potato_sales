@@ -1,0 +1,17 @@
+<div [formGroup]="form">
+  <label [attr.for]="field.key">{{ field.label }}</label>
+
+  <div [ngSwitch]="field.controlType" class="mb-4">
+
+    <input pInputText
+           *ngSwitchCase="'textbox'"
+           [formControlName]="field.key"
+           [id]="field.key"
+           [type]="field.type"
+           [pattern]="field.pattern"
+           [maxLength]="field.dimension"
+           [max]="field.dimension"
+    >
+    <small class="errorMessage" *ngIf="!isValid">{{ field.label }} is required</small>
+  </div>
+</div>

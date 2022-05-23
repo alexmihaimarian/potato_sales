@@ -1,0 +1,17 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div *ngFor="let field of fields" class="form-row">
+      <app-question [field]="field" [form]="form"></app-question>
+    </div>
+
+    <div class="form-row d-flex justify-content-center mb-4">
+      <button pButton label="Save" class="p-button-success" type="submit" [disabled]="!form.valid"></button>
+      <button pButton label="Clear" class="p-button-secondary" type="button" (click)="clear()"></button>
+    </div>
+  </form>
+
+  <div *ngIf="payLoad" class="form-row justify-content-center d-flex">
+    <strong>Data successfully saved</strong>
+  </div>
+</div>
+

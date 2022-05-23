@@ -1,1 +1,45 @@
-<p>sales works!</p>
+<div class="p-fluid p-grid mx-4 mt-4">
+  <p-table [columns]="columns" [value]="items">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <ng-container *ngFor='let key of columns'>
+          <th *ngIf='key.subHeaders' [id]='key' [attr.colspan]=key.subHeaders.length>
+            {{ key.header }}
+          </th>
+          <th *ngIf='!key.subHeaders' [id]='key' [attr.rowspan]=2>
+            {{ key.header }}
+          </th>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container *ngFor='let key of columns'>
+          <th *ngFor='let subheader of key.subHeaders'>
+            {{ subheader.header }}
+          </th>
+        </ng-container>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <ng-container *ngFor='let key of columns'>
+          <td *ngIf='key.subHeaders && rowData[key.field]' [id]='key' [attr.colspan]=key.subHeaders.length>
+            {{ rowData[key.field] }}
+          </td>
+          <td *ngIf='!key.subHeaders && rowData[key.field]' [id]='key' [attr.rowspan]=2>
+            {{ rowData[key.field] }}
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <ng-container *ngFor='let key of columns'>
+          <td *ngFor='let subheader of key.subHeaders' [attr.colspan]=subheader.length>
+            {{ rowData[subheader.field] }}
+          </td>
+        </ng-container>
+        <td>
+          {{ sumSales(rowData) }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
