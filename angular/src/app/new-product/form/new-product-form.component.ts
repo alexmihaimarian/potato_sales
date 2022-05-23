@@ -28,6 +28,7 @@ export class NewProductFormComponent implements OnInit {
   }
 
   clear() {
+    this.payLoad = '';
     this.form.reset();
   }
 
