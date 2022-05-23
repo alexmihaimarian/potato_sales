@@ -10,14 +10,17 @@
                 <label for="float-input">Username</label>
               </span>
               <div *ngIf="loginForm.invalid && usernameControl?.touched && usernameControl.errors">
-                <span *ngIf="usernameControl.errors['required']">Username is required</span>
+                <small *ngIf="usernameControl.errors['required']" class="errorMessage">Username is required</small>
               </div>
             </div>
             <div class="form-floating">
-              <p-password formControlName="password" placeholder="Password" [toggleMask]="true"></p-password>
+              <p-password formControlName="password" placeholder="Password"></p-password>
               <div *ngIf="loginForm.invalid && passwordControl?.touched && passwordControl.errors">
-                <span *ngIf="passwordControl.errors['minlength']">Password must have at least 8 characters</span>
+                <small *ngIf="passwordControl.errors['required']" class="errorMessage">Password is required</small>
               </div>
+            </div>
+            <div *ngIf="!isMatch">
+              <small class="errorMessage">Invalid username or password</small>
             </div>
             <button pButton label="Sign in" class="p-button-success" type="button" (click)="login()" [disabled]="this.loginForm.invalid"></button>
           </form>

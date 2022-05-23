@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required)
   });
 
+  public isMatch = true;
+
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router) { }
@@ -30,8 +32,16 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password') as FormControl;
   }
 
+  matchCredentials() {
+     const usernameMatchWithFakeUsername = this.authenticationService.fakeUsername === this.loginForm.get('username').value;
+     const passwordMatchWithFakePassword = this.authenticationService.fakePassword === this.loginForm.get('password').value;
+
+    this.isMatch = usernameMatchWithFakeUsername && passwordMatchWithFakePassword;
+  }
+
   login(): void {
     // @ts-ignore
+    this.matchCredentials();
     let username = this.loginForm.get('username').value;
     // @ts-ignore
     let password = this.loginForm.get('password').value;
